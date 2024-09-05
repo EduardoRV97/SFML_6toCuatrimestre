@@ -1,5 +1,5 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include "Prerrequisitos.h"
 
 class
 	BaseApp {
@@ -34,7 +34,6 @@ public:
 private:
 
     //Variables Globales
-	sf::RenderWindow* window;
 	sf::RectangleShape* shape;
     sf::CircleShape* shape2;
 };

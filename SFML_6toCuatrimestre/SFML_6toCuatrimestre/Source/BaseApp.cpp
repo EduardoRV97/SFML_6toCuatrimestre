@@ -28,12 +28,7 @@ void BaseApp::initialize() {
 // Funcion de manejo de datos - Declaracion
 
 void BaseApp::handleEvents() {
-    sf::Event event;
-    while (window->pollEvent(event))
-    {
-        if (event.type == sf::Event::Closed)
-            window->close();
-    }
+
 }
 
 //Funcion que se actualiza por frame - Declaracion
@@ -54,6 +49,6 @@ void BaseApp::render() {
 //Funcion de liberacion de memoria - Declaracion
 
 void BaseApp::cleanup() {
-    delete window;
     delete shape;
 }
+
