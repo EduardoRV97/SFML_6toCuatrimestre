@@ -1,12 +1,12 @@
 #pragma once
 #include "Prerrequisitos.h"
-class Window
+
+class 
+Window
 {
 public:
-	Window();
-	Window(int width, int height, const std::string& title) {
-
-	}
+	Window() = default;
+	Window(int width, int height, const std::string& title);
 	~Window();
 
 	// Funcion para manejo de datos

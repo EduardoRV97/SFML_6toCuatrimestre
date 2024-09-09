@@ -1,5 +1,6 @@
 #pragma once
 #include "Prerrequisitos.h"
+#include "Window.h"
 
 class
 	BaseApp {
@@ -8,16 +9,12 @@ public:
 	~BaseApp() = default;
 
     // Funcion que corre el programa en main
-    void
+    int
         run();
 
     // Funcion de inicializacion
     void
         initialize();
-
-    // Funcion de manejo de datos
-    void
-        handleEvents();
 
     // Funcion que se actualiza por frame
     void
@@ -33,6 +30,7 @@ public:
 
 private:
 
+    Window* m_window;
     //Variables Globales
 	sf::RectangleShape* shape;
     sf::CircleShape* shape2;
