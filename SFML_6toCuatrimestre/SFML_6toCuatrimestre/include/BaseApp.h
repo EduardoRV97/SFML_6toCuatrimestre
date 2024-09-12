@@ -1,6 +1,7 @@
 #pragma once
 #include "Prerrequisitos.h"
 #include "Window.h"
+#include "ShapeFactory.h"
 
 class
 	BaseApp {
@@ -13,7 +14,7 @@ public:
         run();
 
     // Funcion de inicializacion
-    void
+    bool
         initialize();
 
     // Funcion que se actualiza por frame
@@ -34,4 +35,6 @@ private:
     //Variables Globales
 	sf::RectangleShape* shape;
     sf::CircleShape* shape2;
+    ShapeFactory m_shapeFactory;
+    sf::Shape* Triangulo;
 };

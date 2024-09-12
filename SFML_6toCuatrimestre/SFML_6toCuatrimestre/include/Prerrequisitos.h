@@ -10,6 +10,16 @@
 // Third Parties
 #include <SFML/Graphics.hpp>
 
+
+//Enum
+
+enum ShapeType
+{
+	CIRCLE = 0,
+	RECTANGLE = 1,
+	TRIANGLE = 2
+};
+
 // MACRO for safe release of resoruces
 
 #define SAFE_PTR_RELEASE(x) if(x != nullptr) { delete x; x = nullptr;}
