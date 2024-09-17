@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de encabezado\EntityComponentSytem">
+      <UniqueIdentifier>{72a3b979-ac44-495c-bffb-e72ea2a3c402}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\EntityComponentSystem">
+      <UniqueIdentifier>{6ccf748f-61e1-4908-9b06-f8fe18cd2341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Memory">
+      <UniqueIdentifier>{314199af-4314-487a-a427-81cf579e688a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Main.cpp">
@@ -40,6 +49,21 @@
     </ClInclude>
     <ClInclude Include="include\ShapeFactory.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Component.h">
+      <Filter>Archivos de encabezado\EntityComponentSytem</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\domin\Downloads\EngineUtilities-main\EngineUtilities-main\EngineMathLib\EngineMathLib\include\Memory\TSharedPointer.h">
+      <Filter>Archivos de encabezado\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\domin\Downloads\EngineUtilities-main\EngineUtilities-main\EngineMathLib\EngineMathLib\include\Memory\TStaticPtr.h">
+      <Filter>Archivos de encabezado\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\domin\Downloads\EngineUtilities-main\EngineUtilities-main\EngineMathLib\EngineMathLib\include\Memory\TUniquePtr.h">
+      <Filter>Archivos de encabezado\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\domin\Downloads\EngineUtilities-main\EngineUtilities-main\EngineMathLib\EngineMathLib\include\Memory\TWeakPointer.h">
+      <Filter>Archivos de encabezado\Memory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

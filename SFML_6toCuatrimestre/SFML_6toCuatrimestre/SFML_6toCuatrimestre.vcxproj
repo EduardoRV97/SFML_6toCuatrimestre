@@ -169,7 +169,12 @@
     <ClCompile Include="Source\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="C:\Users\domin\Downloads\EngineUtilities-main\EngineUtilities-main\EngineMathLib\EngineMathLib\include\Memory\TSharedPointer.h" />
+    <ClInclude Include="C:\Users\domin\Downloads\EngineUtilities-main\EngineUtilities-main\EngineMathLib\EngineMathLib\include\Memory\TStaticPtr.h" />
+    <ClInclude Include="C:\Users\domin\Downloads\EngineUtilities-main\EngineUtilities-main\EngineMathLib\EngineMathLib\include\Memory\TUniquePtr.h" />
+    <ClInclude Include="C:\Users\domin\Downloads\EngineUtilities-main\EngineUtilities-main\EngineMathLib\EngineMathLib\include\Memory\TWeakPointer.h" />
     <ClInclude Include="include\BaseApp.h" />
+    <ClInclude Include="include\Component.h" />
     <ClInclude Include="include\Prerrequisitos.h" />
     <ClInclude Include="include\ShapeFactory.h" />
     <ClInclude Include="include\Window.h" />
