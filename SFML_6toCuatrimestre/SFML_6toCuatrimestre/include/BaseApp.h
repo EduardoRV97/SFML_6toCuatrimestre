@@ -33,8 +33,8 @@ private:
 
     Window* m_window;
     //Variables Globales
-	sf::RectangleShape* shape;
-    sf::CircleShape* shape2;
+	//sf::RectangleShape* shape;
+   // sf::CircleShape* shape2;
     ShapeFactory m_shapeFactory;
-    sf::Shape* Triangulo;
+   // sf::Shape* Triangulo;
 };

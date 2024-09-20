@@ -12,7 +12,9 @@ enum ComponentType {
 	TRANSFORM = 1,
 	SPRITE = 2,
 	RENDERER = 3,
-	PHYSICS = 4
+	PHYSICS = 4,
+	AUDIOSOURCE = 5,
+	SHAPE = 6
 };
 
 /*

@@ -36,6 +36,9 @@
     <ClCompile Include="Source\ShapeFactory.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Actor.cpp">
+      <Filter>Archivos de origen\EntityComponentSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\BaseApp.h">
@@ -53,16 +56,22 @@
     <ClInclude Include="include\Component.h">
       <Filter>Archivos de encabezado\EntityComponentSytem</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\domin\Downloads\EngineUtilities-main\EngineUtilities-main\EngineMathLib\EngineMathLib\include\Memory\TSharedPointer.h">
+    <ClInclude Include="include\Entity.h">
+      <Filter>Archivos de encabezado\EntityComponentSytem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Actor.h">
+      <Filter>Archivos de encabezado\EntityComponentSytem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TSharedPointer.h">
       <Filter>Archivos de encabezado\Memory</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\domin\Downloads\EngineUtilities-main\EngineUtilities-main\EngineMathLib\EngineMathLib\include\Memory\TStaticPtr.h">
+    <ClInclude Include="include\TStaticPtr.h">
       <Filter>Archivos de encabezado\Memory</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\domin\Downloads\EngineUtilities-main\EngineUtilities-main\EngineMathLib\EngineMathLib\include\Memory\TUniquePtr.h">
+    <ClInclude Include="include\TUniquePtr.h">
       <Filter>Archivos de encabezado\Memory</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\domin\Downloads\EngineUtilities-main\EngineUtilities-main\EngineMathLib\EngineMathLib\include\Memory\TWeakPointer.h">
+    <ClInclude Include="include\TWeakPointer.h">
       <Filter>Archivos de encabezado\Memory</Filter>
     </ClInclude>
   </ItemGroup>

@@ -9,15 +9,19 @@
 
 // Third Parties
 #include <SFML/Graphics.hpp>
-
+#include "TSharedPointer.h"
+#include "TWeakPointer.h"
+#include "TStaticPtr.h"
+#include "TUniquePtr.h"
 
 //Enum
 
 enum ShapeType
 {
-	CIRCLE = 0,
-	RECTANGLE = 1,
-	TRIANGLE = 2
+	EMPTY = 0,
+	CIRCLE = 1,
+	RECTANGLE = 2,
+	TRIANGLE = 3
 };
 
 // MACRO for safe release of resoruces
