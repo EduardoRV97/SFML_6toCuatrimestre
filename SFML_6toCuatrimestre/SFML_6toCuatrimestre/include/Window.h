@@ -11,67 +11,43 @@ public:
 
 	// Funcion para manejo de datos
 	void
-	handleEvents();
+		handleEvents();
 
-	/**
-	* @brief Limpia el contenido de la ventana con el color predeterminado
-	*/
+	//Funcion que libera memoria en la ventana
 	void
-	clear();
+		clear();
 
-	/**
-	* @brief Muestra el contenido de la ventana en la pantalla
-	*/
+	// Funcion que muestra datos en pantalla
 	void
-	display();
+		display();
 
-	/**
-	* @brief Verifica si la ventana sigue abierta
-	* 
-	* @return true si la vetana esta abierta, false en caso contrario
-	*/
+	// Funcion que revisa si una ventana se encuentra abierta
 	bool
-	isOpen() const;
+		isOpen();
 
-	/**
-	* @brief Dibuja un objeto que puede ser dibujado en la ventana
-	* 
-	* @param drawable Referencia a un objeto SFML que puede ser dibujado
-	*/
+	// Funcion para dibujar figuras
 	void
-	draw(const sf::Drawable& drawable);
+		draw(const sf::Drawable& drawable);
 
-	/**
-	* @brief Obtiene el objeto interno SFML RenderWindow
-	* 
-	* @return Un puntero al objeto interno SFML RenderWindow
-	*/
+	//Funcion que me ayuda a obetner la ventana
 	sf::RenderWindow*
-	getWindow();
+		GetWindow();
 
-	/**
-	* Funcion de inicializacion
-	*/
+	// Funcion de inicializacion
 	void
-	init();
+		init();
 
-	/**
-	* Funcion que se actualiza por frame
-	*/
+	// Funcion d actualizacion por frame
 	void
-	update();
+		update();
 
-	/**
-	* Funcion de renderizado
-	*/
+	// Funcion de visualizacion en pantalla
 	void
-	render();
+		render();
 
-	/**
-	* Funcion que libera la memoria
-	*/
+	// Funcion de liberacion de memoria
 	void
-	destroy();
+		destroy();
 
 private:
 	sf::RenderWindow* m_window;

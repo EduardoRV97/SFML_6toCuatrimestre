@@ -3,5 +3,6 @@
 int main()
 {
     BaseApp app;
-    return app.run();
+    app.run();
+    return 0;
 }

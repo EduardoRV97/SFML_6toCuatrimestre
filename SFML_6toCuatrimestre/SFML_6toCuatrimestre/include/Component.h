@@ -65,6 +65,6 @@ public:
 
 
 	protected:
-	ComponentType m_type;
+		ComponentType m_type;
 
 };
