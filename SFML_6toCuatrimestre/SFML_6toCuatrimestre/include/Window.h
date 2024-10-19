@@ -11,43 +11,43 @@ public:
 
 	// Funcion para manejo de datos
 	void
-		handleEvents();
+	handleEvents();
 
 	//Funcion que libera memoria en la ventana
 	void
-		clear();
+	clear();
 
 	// Funcion que muestra datos en pantalla
 	void
-		display();
+	display();
 
 	// Funcion que revisa si una ventana se encuentra abierta
 	bool
-		isOpen();
+	isOpen() const;
 
 	// Funcion para dibujar figuras
 	void
-		draw(const sf::Drawable& drawable);
+	draw(const sf::Drawable& drawable);
 
 	//Funcion que me ayuda a obetner la ventana
 	sf::RenderWindow*
-		GetWindow();
+	GetWindow();
 
 	// Funcion de inicializacion
 	void
-		init();
+	init();
 
 	// Funcion d actualizacion por frame
 	void
-		update();
+	update();
 
 	// Funcion de visualizacion en pantalla
 	void
-		render();
+	render();
 
 	// Funcion de liberacion de memoria
 	void
-		destroy();
+	destroy();
 
 private:
 	sf::RenderWindow* m_window;

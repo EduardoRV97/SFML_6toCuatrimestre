@@ -12,16 +12,44 @@ public:
 	virtual
 	~ShapeFactory() = default;
 
-	ShapeFactory(ShapeType shapetype) : m_shape(nullptr), m_shapeType(ShapeType::EMPTY), Component(ComponentType::SHAPE) {}
+	ShapeFactory(ShapeType shapetype) : 
+		m_shape(nullptr), m_shapeType(ShapeType::EMPTY), Component(ComponentType::SHAPE) 
+	{}
 
 	sf::Shape*
-		createShape(ShapeType shapeType);
+	createShape(ShapeType shapeType);
+
+	/*
+	* @brief Actualiza el componente de malla
+	* @param deltaTime Tl tiempo transcurrido desde la ultima actualizacion
+	*/
+	void
+	update(float deltaTime) override {}
+
+	/*
+	* @brief Renderiza el componente de malla
+	* @param window Contexto del dispositivo para operaciones graficas
+	*/
+	void
+	render(Window window)override {}
 
 	void
-		update(float deltaTime) override {}
+	setPosition(float x, float y);
 
 	void
-		render(Window window)override {}
+	setPosition(const sf::Vector2f& position);
+
+	void
+	setFillColor(const sf::Color& color);
+
+	void
+	Seek(const sf::Vector2f& targetPosition, float speed, float deltaTime, float range);
+
+	sf::Shape*
+	getShape()
+	{
+		return m_shape;
+	}
 
 private:
 	sf::Shape* m_shape;

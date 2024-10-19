@@ -6,10 +6,6 @@
 #include <sstream>
 #include <vector>
 #include <thread>
-#include <window.h>
-#include <d3d11.h>
-#include <d3dx11.h>
-#include <d3dcompiler.h>
 
 // Third Parties
 #include <SFML/Graphics.hpp>

@@ -30,7 +30,7 @@ public:
 	* @param windowm Contexto del disposotivo para opareciones graficas
 	*/
 	void 
-	render(Window window) override;
+	render(Window& window) override;
 
 	/**
 	* @brief Destruye el actor y libera los recursos asociados
@@ -62,11 +62,12 @@ template<typename T>
 inline EngineUtilities::TSharedPointer<T>
 Actor::getComponent() {
 	for (auto& component : componentes) {
-		EngineUtilites::TSharedPointer<T> specificComponent = std::dynamic_pointer_cast<T>(component);
+		EngineUtilities::TSharedPointer<T> specificComponent = component.template dynamic_pointer_cast<T>();
 		if (specificComponent) {
 			return specificComponent;
 		}
 	}
-	return nullptr;
+	// Devuelve un TSharedPointer vacío si no se encuentra el componente
+	return EngineUtilities::TSharedPointer<T>();
 }
 

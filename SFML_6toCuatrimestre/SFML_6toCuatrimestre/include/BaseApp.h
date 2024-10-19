@@ -2,6 +2,7 @@
 #include "Prerrequisitos.h"
 #include "Window.h"
 #include "ShapeFactory.h"
+#include "Actor.h"
 
 class
 	BaseApp {
@@ -30,11 +31,10 @@ public:
         cleanup();
 
 private:
+  sf::Clock clock;
+  sf::Time deltaTime;
 
-    Window* m_window;
-    //Variables Globales
-	//sf::RectangleShape* shape;
-   // sf::CircleShape* shape2;
-    ShapeFactory m_shapeFactory;
-   // sf::Shape* Triangulo;
+  Window* m_window;
+  EngineUtilities::TSharedPointer<Actor> Triangle;
+  EngineUtilities::TSharedPointer<Actor> Circle;
 };

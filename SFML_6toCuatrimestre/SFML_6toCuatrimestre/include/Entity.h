@@ -2,18 +2,16 @@
 #include "Prerrequisitos.h"
 #include "Component.h"
 
-class Window;
+class 
+Window;
 
 class
-Entity {
+Entity 
+{
 public:
-	Entity();
-	~Entity();
-
 	/**
 	* @brief Destructor virtual
 	*/
-
 	virtual
 		~Entity() = default;
 
@@ -22,7 +20,7 @@ public:
 	* @param Widnow Contexto del disposotivio para operaciones graficas
 	*/
 	virtual void
-	render(Window window) = 0;
+	render(Window& window) = 0;
 	
 	/**
 	* @brief Metodo virtual puro para renderizar la entidad
@@ -39,9 +37,10 @@ public:
 
 	template<typename T>
 	void
-		addComponent(EngineUtilities::TSharedPointer<T> component) {
+		addComponent(EngineUtilities::TSharedPointer<T> component) 
+	{
 		static_assert(std::is_base_of<Component, T>::value, "T must be drived from Component");
-		componentes.push_back(component);
+		componentes.push_back(component.template dynamic_pointer_cast<Component>());
 	}
 
 	/**
@@ -52,10 +51,13 @@ public:
 
 	template<typename T>
 	EngineUtilities::TSharedPointer<T>
-		getComponent() {
-		for (auto& component : components) {
-			EngineUtilities::TSharedPointer<T> specificComponent = std::dynamic_pointer_cat<T>(component);
-			if (specificComponent) {
+		getComponent() 
+	  {
+		for (auto& component : componentes) 
+		{
+			EngineUtilities::TSharedPointer<T> specificComponent = component.template dynamic_pointer_cast<T>();
+			if (specificComponent) 
+			{
 				return specificComponent;
 			}
 		}
