@@ -2,6 +2,8 @@
 #include "Prerrequisitos.h"
 #include "Entity.h"
 #include "ShapeFactory.h"
+#include "Transform.h"
+
 class
 Actor : Entity
 {

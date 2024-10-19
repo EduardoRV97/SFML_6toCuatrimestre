@@ -176,6 +176,7 @@
     <ClInclude Include="include\Entity.h" />
     <ClInclude Include="include\Prerrequisitos.h" />
     <ClInclude Include="include\ShapeFactory.h" />
+    <ClInclude Include="include\Transform.h" />
     <ClInclude Include="include\TSharedPointer.h" />
     <ClInclude Include="include\TStaticPtr.h" />
     <ClInclude Include="include\TUniquePtr.h" />
