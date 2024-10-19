@@ -45,6 +45,12 @@ public:
 	void
 	Seek(const sf::Vector2f& targetPosition, float speed, float deltaTime, float range);
 
+	void
+	setRotation(float angle);
+
+	void
+	setScale(const sf::Vector2f& scl);
+
 	sf::Shape*
 	getShape()
 	{

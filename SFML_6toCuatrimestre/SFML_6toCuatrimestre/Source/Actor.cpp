@@ -1,7 +1,6 @@
 #include "Actor.h"
 
-Actor::Actor(std::string actorName)
-{
+Actor::Actor(std::string actorName){
 	// Setup Actor Name
 	m_name = actorName;
 	// Setup Shape
@@ -15,25 +14,28 @@ Actor::Actor(std::string actorName)
 
 }
 
-void Actor::update(float deltaTime) 
-{
+void 
+Actor::update(float deltaTime) {
+	auto transform = getComponent<Transform>();
+	auto shape = getComponent<ShapeFactory>();
 
-
+	if (transform && shape) {
+		shape->setPosition(transform->getPosition());
+		shape->setRotation(transform->getRotation().x);
+		shape->setScale(transform->getScale());
+	}
 }
-
-void Actor::render(Window& window) 
-{
-  for (unsigned int i = 0; i < componentes.size(); i++)
-	{
-		if (componentes[i].dynamic_pointer_cast<ShapeFactory>())
-		{
+void 
+Actor::render(Window& window) {
+  for (unsigned int i = 0; i < componentes.size(); i++){
+		if (componentes[i].dynamic_pointer_cast<ShapeFactory>()){
 			window.draw(*componentes[i].dynamic_pointer_cast<ShapeFactory>()->getShape());
+
 		}
 	}
 }
 
-void Actor::destroy() 
-{
-
+void 
+Actor::destroy() {
 }
 

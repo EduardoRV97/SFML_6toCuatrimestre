@@ -33,15 +33,32 @@ ShapeFactory::createShape(ShapeType shapeType)
 }
 
 void
-ShapeFactory::setPosition(float x, float y)
-{
-  m_shape->setPosition(x, y);
+ShapeFactory::setPosition(float x, float y){
+  if (m_shape) {
+    m_shape->setPosition(x, y);
+  }
 }
 
 void
 ShapeFactory::setPosition(const sf::Vector2f& position)
 {
-  m_shape->setPosition(position);
+  if (m_shape) {
+    m_shape->setPosition(position);
+  }
+}
+
+void 
+ShapeFactory::setRotation(float angle) {
+  if (m_shape) {
+    m_shape->setRotation(angle);
+  }
+}
+
+void
+ShapeFactory::setScale(const sf::Vector2f& scl) {
+  if (m_shape) {
+    m_shape->setScale(scl);
+  }
 }
 
 void
