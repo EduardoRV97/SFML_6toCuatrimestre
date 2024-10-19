@@ -6,7 +6,7 @@ ShapeFactory::createShape(ShapeType shapeType)
     m_shapeType = shapeType;
     switch (shapeType) {
 
-    case ShapeType::NONE: {
+    case ShapeType::EMPTY: {
         return nullptr;
     }
     case ShapeType::CIRCLE: {
