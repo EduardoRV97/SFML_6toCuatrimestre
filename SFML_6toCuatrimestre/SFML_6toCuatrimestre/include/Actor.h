@@ -51,7 +51,7 @@ public:
 	getComponent();
 
 private:
-	std::string m_name = "Actor;"; ///< Nombre del actor
+	std::string m_name = "Actor"; ///< Nombre del actor
 };
 
 /**

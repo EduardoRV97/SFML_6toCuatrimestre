@@ -49,6 +49,9 @@ public:
 	void
 	destroy();
 
+	sf::Clock clock; ///< Reloj para calcular deltaTime.
+	sf::Time deltaTime; // Almacena el tiempo transcurrido
 private:
 	sf::RenderWindow* m_window;
+	sf::View m_view;
 };

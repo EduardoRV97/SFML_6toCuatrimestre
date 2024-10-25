@@ -1,105 +1,116 @@
 #include "Window.h"
 
-Window::Window(int width, int height, const std::string& title) 
-{
+Window::Window(int width, int height, const std::string& title) {
 	m_window = new sf::RenderWindow(sf::VideoMode(width, height), title);
 
-	if (!m_window)
-	{
+	if (!m_window){
 		ERROR("Window", "Window", " CHECK CONSTRUCTOR");
 	}
-	else 
-	{
+	else {
 		MESSAGE("Window", "Window", "OK");
 	}
+
+	//Inicializa el recurso de IMGUI
+	ImGui::SFML::Init(*m_window);
 }
 
-Window::~Window() 
-{
+Window::~Window() {
+	ImGui::SFML::Shutdown();
 	delete m_window;
 }
 
 void 
-Window::handleEvents()
-{
+Window::handleEvents(){
 	sf::Event event;
-	while (m_window->pollEvent(event))
-	{
-		if (event.type == sf::Event::Closed)
+	while (m_window->pollEvent(event)){
+		ImGui::SFML::ProcessEvent(event); //Permite la interaccion entre el gui y el usuario
+		switch (event.type){
+		case sf::Event::Closed:
 			m_window->close();
+			break;
+
+	  // Manejar el evento de redimensionar
+		case sf::Event::Resized: 
+			// Obtener el nuevo tamaño de la ventana
+			unsigned int newWidth = event.size.width;
+			unsigned int newHeight = event.size.height;
+			// Opcional: Redefinir el tamaño de la vista para ajustarse al nuevo tamaño de la ventana
+			m_view = m_window->getView();
+			m_view.setSize(static_cast<float>(newWidth), static_cast<float>(newHeight));
+			m_window->setView(m_view);
+			break;
+		}
 	}
 }
 
 void 
-Window::clear()
-{
-	if (m_window != nullptr) 
-	{
+Window::clear(){
+	if (m_window != nullptr) {
 		m_window->clear();
 	}
-	else 
-	{
+	else {
 		ERROR("Window", "Window", " CHECK FOR WINDOW POINTER DATA");
 	}
 }
 
 void 
-Window::display()
-{
-	if (m_window != nullptr) 
-	{
+Window::display(){
+	if (m_window != nullptr) {
 		m_window->display();
 	}
-	else 
-	{
+	else {
 		ERROR("Window", "display", " CHECK FOR WINDOW POINTER DATA");
 	}
 }
 
 bool 
-Window::isOpen() const
-{
-	if (m_window != nullptr) 
-	{
+Window::isOpen() const{
+	if (m_window != nullptr) {
 		return m_window->isOpen();
 	}
-	else 
-	{
+	else {
 		ERROR("Window", "isOpen", " CHECK FOR WINDOW POINTER DATA");
 		return false;
 	}
 }
 
 void
-Window::draw(const sf::Drawable& drawable)
-{
-	if (m_window != nullptr) 
-	{
+Window::draw(const sf::Drawable& drawable){
+	if (m_window != nullptr) {
 		m_window->draw(drawable);
 	}
-	else 
-	{
+	else {
 		ERROR("Window", "draw", "CHECK FOR WINDOW POINTER DATA");
 	}
 }
 
 sf::RenderWindow* 
-Window::GetWindow()
-{
-	if (m_window != nullptr) 
-	{
+Window::GetWindow(){
+	if (m_window != nullptr) {
 		return m_window;
 	}
-	else 
-	{
+	else {
 		ERROR("Window", "getWindow", "CHECK FOR WINDOW POINTER DATA");
 		return nullptr;
 	}
 }
 
-void 
-Window::destroy()
+void Window::update(){
+	// Almacena el deltaTime una sola vez
+	deltaTime = clock.restart();
+
+	// Usa ese deltaTime para actualizar ImGui
+	ImGui::SFML::Update(*m_window, deltaTime);
+}
+
+void Window::render()
 {
+	ImGui::SFML::Render(*m_window);
+}
+
+void
+Window::destroy(){
+	ImGui::SFML::Shutdown();
 	SAFE_PTR_RELEASE(m_window);
 }
 

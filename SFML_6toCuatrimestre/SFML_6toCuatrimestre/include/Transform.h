@@ -24,6 +24,26 @@ public:
 	destroy();
 
 	void
+	Seek(const sf::Vector2f& targetPosition,
+			float speed,
+			float deltaTime,
+			float range) {
+
+		// Calcular la dirección desde el círculo hacia el objetivo
+		// Nota: Dirección es la pi - pf
+		sf::Vector2f direction = targetPosition - position;
+
+		// Calcular la distancia al objetivo
+		float lenght = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+
+		// Sí la distancia es mayor que el rango, mover la shape hacia el objetivo
+		if (lenght > range){
+			direction /= lenght;
+			position += direction * speed * deltaTime;
+		}
+	}
+
+	void
 	setPosition(const sf::Vector2f& _position) {
 		position = _position;
 	}

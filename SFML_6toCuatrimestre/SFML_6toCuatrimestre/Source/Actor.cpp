@@ -14,6 +14,11 @@ Actor::Actor(std::string actorName){
 
 }
 
+/**
+ * @brief Actualiza el estado del actor.
+ * @param deltaTime Tiempo transcurrido desde la última actualización.
+ */
+
 void 
 Actor::update(float deltaTime) {
 	auto transform = getComponent<Transform>();
@@ -25,6 +30,12 @@ Actor::update(float deltaTime) {
 		shape->setScale(transform->getScale());
 	}
 }
+
+/**
+ * @brief Renderiza los componentes del actor.
+ * @param window Contexto de la ventana para operaciones gráficas.
+ */
+
 void 
 Actor::render(Window& window) {
   for (unsigned int i = 0; i < componentes.size(); i++){

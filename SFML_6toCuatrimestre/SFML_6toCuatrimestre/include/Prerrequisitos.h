@@ -14,6 +14,9 @@
 #include "TStaticPtr.h"
 #include "TUniquePtr.h"
 
+// IMGUI
+#include <imgui.h>
+#include <imgui-SFML.h>
 //Enum
 
 enum ShapeType

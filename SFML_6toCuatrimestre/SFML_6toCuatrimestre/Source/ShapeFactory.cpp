@@ -1,8 +1,7 @@
 #include "ShapeFactory.h"
 
 sf::Shape*
-ShapeFactory::createShape(ShapeType shapeType)
-{
+ShapeFactory::createShape(ShapeType shapeType){
     m_shapeType = shapeType;
     switch (shapeType) {
 
@@ -62,10 +61,13 @@ ShapeFactory::setScale(const sf::Vector2f& scl) {
 }
 
 void
-ShapeFactory::setFillColor(const sf::Color& color)
-{
+ShapeFactory::setFillColor(const sf::Color& color){
   m_shape->setFillColor(color);
 }
+
+/*
+
+Funcion antigua de Seek--
 
 void
 ShapeFactory::Seek(const sf::Vector2f& targetPosition,
@@ -89,5 +91,5 @@ ShapeFactory::Seek(const sf::Vector2f& targetPosition,
     direction /= lenght;
     m_shape->move(direction * speed * deltaTime);
   }
-}
+}*/
 
