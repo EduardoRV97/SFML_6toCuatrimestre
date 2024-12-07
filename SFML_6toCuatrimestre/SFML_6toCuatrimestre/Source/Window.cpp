@@ -12,6 +12,9 @@ Window::Window(int width, int height, const std::string& title) {
 
 	//Inicializa el recurso de IMGUI
 	ImGui::SFML::Init(*m_window);
+	if (!m_renderTexture.create(width, height)) {
+		ERROR("Window", "RenderTexture", "CHECK CREATION");
+	}
 }
 
 Window::~Window() {
@@ -22,22 +25,24 @@ Window::~Window() {
 void 
 Window::handleEvents(){
 	sf::Event event;
-	while (m_window->pollEvent(event)){
-		ImGui::SFML::ProcessEvent(event); //Permite la interaccion entre el gui y el usuario
-		switch (event.type){
+	while (m_window->pollEvent(event)) {
+		ImGui::SFML::ProcessEvent(event);
+
+		switch (event.type) {
 		case sf::Event::Closed:
 			m_window->close();
 			break;
-
-	  // Manejar el evento de redimensionar
-		case sf::Event::Resized: 
+		case sf::Event::Resized:
+			// Manejar el evento de redimensionar
 			// Obtener el nuevo tamaño de la ventana
-			unsigned int newWidth = event.size.width;
-			unsigned int newHeight = event.size.height;
-			// Opcional: Redefinir el tamaño de la vista para ajustarse al nuevo tamaño de la ventana
-			m_view = m_window->getView();
-			m_view.setSize(static_cast<float>(newWidth), static_cast<float>(newHeight));
-			m_window->setView(m_view);
+			unsigned int width = event.size.width;
+			unsigned int height = event.size.height;
+			sf::View view = m_window->getView();
+			view.setSize(static_cast<float>(width), static_cast<float>(height));
+			m_window->setView(view);
+
+			// Actualizar RenderTexture si la ventana cambia de tamaño
+			m_renderTexture.create(width, height);
 			break;
 		}
 	}
@@ -50,6 +55,10 @@ Window::clear(){
 	}
 	else {
 		ERROR("Window", "Window", " CHECK FOR WINDOW POINTER DATA");
+	}
+
+	if (m_renderTexture.getSize().x > 0 && m_renderTexture.getSize().y > 0) {
+		m_renderTexture.clear();
 	}
 }
 
@@ -76,11 +85,14 @@ Window::isOpen() const{
 
 void
 Window::draw(const sf::Drawable& drawable){
-	if (m_window != nullptr) {
+	/*if (m_window != nullptr) {
 		m_window->draw(drawable);
 	}
 	else {
 		ERROR("Window", "draw", "CHECK FOR WINDOW POINTER DATA");
+	}*/
+	if (m_renderTexture.getSize().x > 0 && m_renderTexture.getSize().y > 0) {
+		m_renderTexture.draw(drawable);
 	}
 }
 
@@ -93,6 +105,25 @@ Window::GetWindow(){
 		ERROR("Window", "getWindow", "CHECK FOR WINDOW POINTER DATA");
 		return nullptr;
 	}
+}
+
+void
+Window::renderToTexture() {
+	// Después de renderizar todo lo que quieras en la textura
+	m_renderTexture.display();
+}
+
+void
+Window::showInImGui() {
+	const sf::Texture& texture = m_renderTexture.getTexture();
+
+	// Obtener el tamaño de la textura
+	ImVec2 size(texture.getSize().x, texture.getSize().y);
+
+	// Renderizar la textura en ImGui con las coordenadas UV invertidas en el eje Y
+	ImGui::Begin("Scene");
+	ImGui::Image((void*)(intptr_t)texture.getNativeHandle(), size, ImVec2(0, 1), ImVec2(1, 0));
+	ImGui::End();
 }
 
 void Window::update(){

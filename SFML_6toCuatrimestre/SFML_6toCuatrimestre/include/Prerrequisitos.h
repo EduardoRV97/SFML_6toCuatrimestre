@@ -6,6 +6,9 @@
 #include <sstream>
 #include <vector>
 #include <thread>
+#include <map>
+#include <fstream>
+#include <unordered_map>
 
 // Third Parties
 #include <SFML/Graphics.hpp>
@@ -25,6 +28,13 @@ enum ShapeType
 	CIRCLE = 1,
 	RECTANGLE = 2,
 	TRIANGLE = 3
+};
+
+enum
+	ConsoleErrorType {
+	INFO = 0,
+	WARNING = 1,
+	ERROR = 2
 };
 
 // MACRO for safe release of resoruces

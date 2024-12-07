@@ -2,6 +2,7 @@
 #include "Prerrequisitos.h"
 #include "Window.h"
 #include "Actor.h"
+#include "GUI.h"
 
 /**
  * @class BaseApp
@@ -16,7 +17,7 @@ class
 	BaseApp {
 public:
 	BaseApp() = default;
-	~BaseApp() = default;
+	~BaseApp();
 
     // Funcion que corre el programa en main
   int
@@ -52,6 +53,9 @@ private:
   EngineUtilities::TSharedPointer<Actor> Circle; ///< Puntero compartido al Actor del círculo.
   EngineUtilities::TSharedPointer<Actor> Track;
 
+  std::vector< EngineUtilities::TSharedPointer<Actor>> m_actors;
+  EngineUtilities::TSharedPointer<Actor> m_selectedActor;
+
   int currentWaypoint = 0; ///< Índice del punto de recorrido actual.
 
   std::vector<sf::Vector2f> waypoints = {
@@ -60,4 +64,8 @@ private:
       {600.0f, 600.0f},
       {100.0f, 600.0f}
   }; ///< Lista de puntos de recorrido (waypoints).
+
+  sf::Texture Carro;
+  sf::Texture texture;
+  GUI m_GUI;
 };

@@ -1,5 +1,4 @@
 #pragma once
-
 class Window;
 
 /*enum Component Type
@@ -14,7 +13,8 @@ enum ComponentType {
 	RENDERER = 3,
 	PHYSICS = 4,
 	AUDIOSOURCE = 5,
-	SHAPE = 6
+	SHAPE = 6,
+	TEXTURE = 7
 };
 
 /*
@@ -25,8 +25,7 @@ enum ComponentType {
 * deben implementar, permitiendo actualizar y renderizt el componente, asi como obtener su tipo
 */
 
-class Component
-{
+class Component{
 public:
 
 	/**@brief Constructor por defecto*/

@@ -165,6 +165,7 @@
   <ItemGroup>
     <ClCompile Include="Source\Actor.cpp" />
     <ClCompile Include="Source\BaseApp.cpp" />
+    <ClCompile Include="Source\GUI.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\ShapeFactory.cpp" />
     <ClCompile Include="Source\Window.cpp" />
@@ -180,13 +181,21 @@
     <ClInclude Include="include\BaseApp.h" />
     <ClInclude Include="include\Component.h" />
     <ClInclude Include="include\Entity.h" />
+    <ClInclude Include="include\GUI.h" />
+    <ClInclude Include="include\NotificationService.h" />
     <ClInclude Include="include\Prerrequisitos.h" />
+    <ClInclude Include="include\Quaternion.h" />
+    <ClInclude Include="include\ResourceManager.h" />
     <ClInclude Include="include\ShapeFactory.h" />
+    <ClInclude Include="include\Texture.h" />
     <ClInclude Include="include\Transform.h" />
     <ClInclude Include="include\TSharedPointer.h" />
     <ClInclude Include="include\TStaticPtr.h" />
     <ClInclude Include="include\TUniquePtr.h" />
     <ClInclude Include="include\TWeakPointer.h" />
+    <ClInclude Include="include\Vector2.h" />
+    <ClInclude Include="include\Vector3.h" />
+    <ClInclude Include="include\Vector4.h" />
     <ClInclude Include="include\Window.h" />
     <ClInclude Include="ThirdParties\imgui-sfml-2.6.x\imconfig-SFML.h" />
     <ClInclude Include="ThirdParties\imgui-sfml-2.6.x\imconfig.h" />

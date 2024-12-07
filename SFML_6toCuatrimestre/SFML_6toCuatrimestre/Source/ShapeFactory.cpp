@@ -30,14 +30,14 @@ ShapeFactory::createShape(ShapeType shapeType){
         return nullptr;
     }
 }
-
+// Establece la posición de la forma.
 void
 ShapeFactory::setPosition(float x, float y){
   if (m_shape) {
     m_shape->setPosition(x, y);
   }
 }
-
+// Establece la posición de la forma.
 void
 ShapeFactory::setPosition(const sf::Vector2f& position)
 {
@@ -45,7 +45,7 @@ ShapeFactory::setPosition(const sf::Vector2f& position)
     m_shape->setPosition(position);
   }
 }
-
+// Establece la rotación de la forma.
 void 
 ShapeFactory::setRotation(float angle) {
   if (m_shape) {
@@ -59,7 +59,7 @@ ShapeFactory::setScale(const sf::Vector2f& scl) {
     m_shape->setScale(scl);
   }
 }
-
+// Establece el color
 void
 ShapeFactory::setFillColor(const sf::Color& color){
   m_shape->setFillColor(color);

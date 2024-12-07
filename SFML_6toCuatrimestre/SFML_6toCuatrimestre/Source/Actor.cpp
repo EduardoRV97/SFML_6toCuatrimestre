@@ -1,6 +1,13 @@
 #include "Actor.h"
+#include "NotificationService.h"
+#include "Prerrequisitos.h"
+#include "ShapeFactory.h"
+#include "Transform.h"
+
 
 Actor::Actor(std::string actorName){
+
+	NotificationService& notifier = NotificationService::getInstance();
 	// Setup Actor Name
 	m_name = actorName;
 	// Setup Shape
@@ -11,7 +18,7 @@ Actor::Actor(std::string actorName){
 	EngineUtilities::TSharedPointer<Transform> transform = EngineUtilities::MakeShared<Transform>();
 	addComponent(transform);
 	// Setup Sprite
-
+	notifier.Log("Actor named " + m_name + " was created.");
 }
 
 /**

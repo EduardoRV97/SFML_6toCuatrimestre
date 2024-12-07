@@ -44,6 +44,13 @@ public:
 	}
 
 	void
+	setTransform(const sf::Vector2f& _position, const sf::Vector2f& _rotation, const sf::Vector2f& _scale) {
+	position = _position;
+	rotation = _rotation;
+	scale = _scale;
+	}
+
+	void
 	setPosition(const sf::Vector2f& _position) {
 		position = _position;
 	}
@@ -71,6 +78,21 @@ public:
 	sf::Vector2f& 
 	getScale() {
 		return scale;
+	}
+
+	float*
+	getPosData() {
+	return &position.x;
+	}
+
+	float*
+	getRotData() {
+	return &rotation.x;
+	}
+
+	float*
+	getScaData() {
+	return &scale.x;
 	}
 
 private:
